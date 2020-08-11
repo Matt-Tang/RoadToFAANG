@@ -1,4 +1,4 @@
-# RoadToFAANG
+# Road To FAANG
 
 # Day 1 - August 11th, 2020
 ## Concepts learned: Merge Intervals, Insert Intervals, C++ Syntax
