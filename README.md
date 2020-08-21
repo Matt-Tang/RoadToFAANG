@@ -14,3 +14,6 @@ sort(v.begin(), v.end(), [](vector<int>& a, vector<int>& b) {
 
 https://leetcode.com/problems/merge-intervals/<br/>
 https://leetcode.com/problems/insert-interval/
+
+# Day 2-10 - August 12th to August 20th, 2020
+Finished up my exams for the Spring 2020 term and also took a few days off to reset myself. Most of the time I spent hanging out with friends, biking to Toronto, and catching up on some sleep. I'm well motivated to start the grind again :)
