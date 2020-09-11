@@ -38,3 +38,23 @@ The basic template to solve any overlapping problem is: <br/>
 <ins>Minimum Number of Arrows to Burst Balloons:</ins> This is an example of applying the template we used above. First sort the intervals, then go through the sorted intervals one by one and see if there is overlap. If there is overlap between our "active set" and the "current interval" that means the same arrow can be used and all we need to do is update the (minEnd). If there's no overlap, that means another arrow is needed so we increase the arrowCount by one and update our end pointer. After we finish looping, we just return the numberArrows + 1.  
 
 https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/
+
+# Day 2 - September 1th, 2020
+## Concepts learned: Missing Number
+
+Feeling a little tired from work today and working out. I was only able to do 1 problem. When dealing with a problem that requires constant space, the first thing you should think about is modifying the original array. If we didn't have space constraint, the easiest answer would be to have 2 loops: 1 loop that would add numbers to the set, and the second loop to find the missing number in the set. However, with a space constraint we can't use a set. <br/>
+
+There's a lot of ways to do this, but, given a space and time constraint the easiest way would be bit manipulation or using XOR. The XOR is a really special case and this is a problem that you should just memorize. There isn't much code and the solution can be easily remembered. It is a fast and very efficient strategy:
+
+```
+int missingNumber(vector<int>& nums) {
+    int result = nums.size();
+    for(int i = 0; i < nums.size(); i++){
+        result ^= i;
+        result ^= nums[i];
+    }
+    
+    return result; 
+}
+```
+https://leetcode.com/problems/missing-number/
