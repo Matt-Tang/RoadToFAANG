@@ -39,7 +39,7 @@ The basic template to solve any overlapping problem is: <br/>
 
 https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/
 
-# Day 2 - September 1th, 2020
+# Day 2 - September 10th, 2020
 ## Concepts learned: Missing Number
 
 Feeling a little tired from work today and working out. I was only able to do 1 problem. When dealing with a problem that requires constant space, the first thing you should think about is modifying the original array. If we didn't have space constraint, the easiest answer would be to have 2 loops: 1 loop that would add numbers to the set, and the second loop to find the missing number in the set. However, with a space constraint we can't use a set. <br/>
@@ -58,3 +58,59 @@ int missingNumber(vector<int>& nums) {
 }
 ```
 https://leetcode.com/problems/missing-number/
+
+# Break - September 11-14th, 2020
+
+On Friday, I met up with a friend after work for dinner and just caught up. On Saturday and Sunday I helped my parents place concrete tiles in the backyard and that took a lot of energy out of me. I also started to play basketball with Kelvin. On Monday, Jordan came to pick up his bike and him, Kelvin, and I had a basketball 1v1 competition. We tied for wins and I jammed my finger really badly :(
+
+# Day 3 - September 15th, 2020
+## Concepts learned: Amazon Interview Questions (1-3 out of 67) - Design Tic Tac Toe, Remove Palindromic Subsequences, 
+
+I'm starting Amazon's interview prep early. There are 67 questions and I am aiming to do 2-3 every single day. The questions can be found in this playlist: https://www.youtube.com/playlist?list=PLKZaSt2df1gwm69QBaDJTqTDea28qZjY0 <br/>
+
+<ins>LeetCode #348: Design Tic Tac Toe</ins> The brute force solution would be to create a n by n grid and after every time the move function is called we would need to check the horizontal, vertical, and diagonal which would be O(n^2). A slight optimization can be done to make the check O(n). 
+
+If you look at the grid, there are some positions that a diagonal can’t be formed. In these positions, we only need to check the column and the row which reduces the runtime of our algorithm. The “special” positions that we need to check the diagonal would be:
+
+1) When row = column  or i = j
+```
+|X| | |
+| |X| | 
+| | |X|
+```
+2) When row + column = n-1  or i+j = n-1
+```
+| | |X|
+| |X| | 
+|X| | |
+```
+
+By doing this, our runtime would be O(n) and space would be O(n^2). 
+
+O(n^2) space is quite expensive. A better method would be to break up a 2D array into 2 1D arrays. The 1D arrays represent a tally system for the rows and columns where we increment by 1 for player 1 and decrement by 1 for player 2. Now, instead of checking the entire row and the entire column, we are only checking if the value at the current row and column is == n or not. With this optimized approach, the checking is now reduced to O(1) and the space is O(n). 
+
+The other thing we need to take care of is the diagonals. In a 3 x 3 grid, there are only 2 diagonals so we can keep track of them in 2 separate variables instead of in an array. Just like above, if player 1 makes a move on the diagonal, we increment the diagonal variable, and if player 2 makes a move on the diagonal, we decrement the diagonal variable. 
+
+<ins>LeetCode #1332: Remove Palindromic Subsequence</ins> The hardest part about this question is the definition of removing a subsequnce. It is important to note that the subsequence does not need to be sequential. For example: abbaabb. Clearly this is not a palindrome, but, we could remove the palindromic subsequence by doing the following:
+
+``` abbaabb ```
+1) pos1: a, pos4: a, pos5: a -> bbbb 
+2) Remove the b's -> " "
+
+If you didn't notice, because of this specific definition of a subsequence which doesn't need to be sequential, the greatest amount of moves needed to remove a string consisting of only a's and b's is 2:
+
+1) Empty string -> return 0
+2) String is already a palindrome -> return 1
+3) String is not a palindrome -> return 2 <br/>
+** Note that we can remove an arbitrary subsequence of a's, then the string will only contain b's. 2 moves is the maximum number of moves that is required ** 
+
+<ins>LeetCode #277: Find The Celebrity</ins> It is easy to think of this problem as a graph problem. The celebrity node has an input of n-1 and an output of 0. The brute force solution would be a talley counter. Go through every person and see who knows who and keep track of that in a 1D array. At the end, the person who has n-1 votes is the celebrity. The runtime of this is O(n^2) and the space complexity is O(n).
+
+Instead of thinking of the number of inputs, we should focus on the output of a node. Suppose we have 4 nodes. If node0 knows node1, then immediately node0 can not be the celebrity. If node1 does not know anyone, then node1 is the celebrity. We don't need to waste time keeping track of a talley counter. Therefore, the runtime would be O(n) and the space would be O(1). The algorithm becomes pretty simple:
+
+1) Determine a possible candidate by going from 0 to n-1 and checking who knows who
+2) After we determine a candidate, check if its the celebrity
+
+https://ttzztt.gitbooks.io/lc/content/design-tic-tac-toe.html <br/>
+https://leetcode.com/problems/remove-palindromic-subsequences/ <br/>
+https://ttzztt.gitbooks.io/lc/content/find-the-celebrity.html
