@@ -64,7 +64,7 @@ https://leetcode.com/problems/missing-number/
 On Friday, I met up with a friend after work for dinner and just caught up. On Saturday and Sunday I helped my parents place concrete tiles in the backyard and that took a lot of energy out of me. I also started to play basketball with Kelvin. On Monday, Jordan came to pick up his bike and him, Kelvin, and I had a basketball 1v1 competition. We tied for wins and I jammed my finger really badly :(
 
 # Day 3 - September 15th, 2020
-## Concepts learned: Amazon Interview Questions (1-3 out of 67) - Design Tic Tac Toe, Remove Palindromic Subsequences, 
+## Concepts learned: Amazon Interview Questions (1-3 out of 67) - Design Tic Tac Toe, Remove Palindromic Subsequences, Find the Celebrity
 
 I'm starting Amazon's interview prep early. There are 67 questions and I am aiming to do 2-3 every single day. The questions can be found in this playlist: https://www.youtube.com/playlist?list=PLKZaSt2df1gwm69QBaDJTqTDea28qZjY0 <br/>
 
@@ -114,3 +114,35 @@ Instead of thinking of the number of inputs, we should focus on the output of a 
 https://ttzztt.gitbooks.io/lc/content/design-tic-tac-toe.html <br/>
 https://leetcode.com/problems/remove-palindromic-subsequences/ <br/>
 https://ttzztt.gitbooks.io/lc/content/find-the-celebrity.html
+
+# Day 4 - September 16th, 2020
+## Concepts learned: Amazon Interview Questions (4-6 out of 67) - Rotting Oranges, Max Difference You Can Get From Changing an Integer, Check If a String Can Break Another String
+<ins>LeetCode #994: Rotting Oranges</ins> This is a classical BFS question using a Queue implementation. There isn't too many tricks involved in this question and the general algorithm looks like:
+
+1) Create queue
+2) Go through the entire 2D grid and add rotten oranges to the queue
+3) Go through each rotten orange and infect in the 4 directions while keeping track of the time
+
+<ins>LeetCode #1432: Max Difference You Can Get From Changing an Integer</ins> This question is about finding the minimum number, the maximum number, and finding the max difference. To get the minimum/maximum number we need to look at the most significant digit and change that number accordingly. 
+
+For the maximum number: Find the first instance of the number from right to left (->) that isn't a 9. <br/>
+For the minimum number: There is a corner case. We can't have leading 0's. If the most significant number is not a 1, we just need to change it to a 1. If the most signifcant number is a 1, we move from right to left (->) until we hit a number that's not a 0 or 1 and change it to a 1. This will get obey the leading 0's constraint that we have. 
+
+The runtime of this would be O(n) and the space would be constant O(1). The space is constant because we are changing an int to a string to make string replacements and indexing much easier.
+
+<ins>LeetCode #1433: Check If a String Can Break Another String</ins> The way to approach this question is to sort the subsequences first. Once they are sorted, all we need to do is run two independent loops and check if s1 breaks s2 and if s1 is broken by s2.
+
+To easily sort strings alphabetically:
+```
+sort(s.begin(), s.end());
+```
+
+Additionaly we can compare char values:
+```
+if(s1[i] >= s2[i])
+    ...
+```
+
+https://leetcode.com/problems/rotting-oranges/ <br/>
+https://leetcode.com/problems/max-difference-you-can-get-from-changing-an-integer/ <br/>
+https://leetcode.com/problems/check-if-a-string-can-break-another-string/
