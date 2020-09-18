@@ -146,3 +146,26 @@ if(s1[i] >= s2[i])
 https://leetcode.com/problems/rotting-oranges/ <br/>
 https://leetcode.com/problems/max-difference-you-can-get-from-changing-an-integer/ <br/>
 https://leetcode.com/problems/check-if-a-string-can-break-another-string/
+
+# Day 5 - September 17th, 2020
+## Concepts learned: Amazon Interview Questions (8 out of 67) - Last Stone Weight
+
+I'm skipping question 7 because it is really poorly worded and is a confusing question to understand. <br/>
+
+<ins>LeetCode #1046: Last Stone Weight</ins> Since this question requires us to keep track of the 2 heaviest stones, the immediate data structure that we should think of would be a priority queue. A PQ is an optimized data structure for keeping track of maximum/minimum and dynamically changing the data set that we are handling. Some C++ and Java syntax for priority queue is listed below:
+
+For C++
+```
+priority_queue<int> pq;
+pq.top();
+pq.push(test);
+```
+
+For Java
+```
+PriorityQueue<Integer> pq = new PriorityQueue<>((a, b)-> b - a); // By default Java has a MIN HEAP, we want a MAX HEAP
+pq.poll() // this removes the top element and returns the value
+pq.offer(test)
+```
+
+https://leetcode.com/problems/last-stone-weight/
