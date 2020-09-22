@@ -217,5 +217,5 @@ When you use the &, you don't copy, you use original value through reference.
 ```
 
 https://leetcode.com/problems/number-of-ways-to-paint-n-3-grid/ <br/>
-https://leetcode.com/problems/number-of-ways-to-paint-n-3-grid/discuss/574943/Java-Detailed-Explanation-with-Graph-Demo-DP-Easy-Understand
+https://leetcode.com/problems/number-of-ways-to-paint-n-3-grid/discuss/574943/Java-Detailed-Explanation-with-Graph-Demo-DP-Easy-Understand <br/>
 https://leetcode.com/problems/group-anagrams/
