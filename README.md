@@ -169,3 +169,53 @@ pq.offer(test)
 ```
 
 https://leetcode.com/problems/last-stone-weight/
+
+# Break - September 18-20th, 2020
+
+On Friday, I met up with a friend after work for Korean fried chicken and bingsu. It was honestly a lovely night. On Saturday and Sunday, I just relaxed and spent time with my family. I started watching Re: Zero, called some friends, and caught up with some school work for PD 6 and EARTH 121. 
+
+# Day 6 - September 21st, 2020
+## Concepts learned: Amazon Interview Questions (9,12 out of 67) - Number of Ways to Paint N x 3 Grid, Group Anagrams
+
+I'm skipping question 10-11 because these questions are not popular and very niche. <br/>
+
+<ins>LeetCode #1411: Number of Ways to Paint N × 3 Grid</ins> In any type of row there are two possibilties. Either in a row you have 2 colours (ex: red, green, red) or you have a row with 3 colours (ex: red, green, yellow). Depending on the choice you make on the ith row, it will affect the outcome of the i+1th row. This dependency is a clear indication that you need to do some recursion. The catch is that there is obviously heavy recursion that is required here. Heavy + Optimized recursion means DYNAMIC PROGRAMMING!
+
+<img width="700" alt="image" src="https://user-images.githubusercontent.com/38430052/93509813-457dd200-f8ee-11ea-8184-9d9496e976d9.png">
+
+First we need to draw the diagram out and come up with a formula. Depending on the ith row, it'll change the output of the i+1th row:
+1) 2Colour (i+1th row) = 2 * 3Colour(i) + 3 * 2Colour(i)
+2) 3Colour (i+1th row) = 2 * 3Colour(i) + 2 * 2Colour(i)
+
+Keep in mind the first row, can either be 2 coloured or 3 coloured:
+1) If 3 coloured: 3! = 6 possibilities 
+2) If 2 coloured: C(3,2) * 2 = 6 possibilities
+
+For C++, the code for exponents is: 
+```
+int MOD = (int) (1e9 + 7); // 10^9 + 7
+```
+
+<ins>LeetCode #49: Group Anagrams</ins> To find whether two strings are anagrams of each other, a simple solution would be to just sort the two strings and then compare them to each toher. In fact, that is the main idea behind solving this problem. If we want to find groups of anagrams, an excellent idea would be to sort the strings, and then store them into a map ```<string, vector<string>>```. After they are stored into a map, just loop through and put them into a ```vector<vector<string>>```.
+    
+The best choice of a map would be an unordered_map:
+```
+unordered_map vs map :
+Map is implemented as balanced tree structure that is why it is possible to maintain an order between 
+the elements (by specific tree traversal). 
+Time complexity of map operations is O(Log n) while for unordered_map, it is O(1) on average.
+
+unordered_map<string, vector<string>> map;
+```
+
+Additionally, there are some tips you can use for optimization:
+
+```
+for(auto &a : map) vs. for(auto a : map)
+The first one is faster. This is because when using a for each loop, you copy each element and use it. 
+When you use the &, you don't copy, you use original value through reference.
+```
+
+https://leetcode.com/problems/number-of-ways-to-paint-n-3-grid/ <br/>
+https://leetcode.com/problems/number-of-ways-to-paint-n-3-grid/discuss/574943/Java-Detailed-Explanation-with-Graph-Demo-DP-Easy-Understand
+https://leetcode.com/problems/group-anagrams/
