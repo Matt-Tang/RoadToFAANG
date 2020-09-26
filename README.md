@@ -239,7 +239,9 @@ For C++:  int result = INT_MIN;
 https://leetcode.com/problems/largest-number/
 
 # Day 8 - September 26th, 2020
-## Concepts learned: Amazon Interview Questions (14 out of 67) - Construct K Palindrome String
+## Concepts learned: Amazon Interview Questions (14, 16 out of 67) - Construct K Palindrome String, Design Underground System
+
+I'm skipping question 15 because this question is not worth solving in my opinion. <br/>
 
 <ins>LeetCode #1400: Construct K Palindrome Strings</ins> There are two types of palindrome strings that we need to investigate. There is an odd palindrome and there is an even palindrome. Both odd and even are "valid palindromes" but they differ based on the characters inside the string. In the below example, we see that in the even palindrome all characters are even numbered (a=4, b=2) and in the odd palindrome there is a set of character that is odd numbered (a=4, b=3).
 
@@ -263,6 +265,18 @@ ____ ____ ____
 ```
 From the above example, it is obvious how we should construct our algorithm. The hardest part about this question is understanding the concepts of odd and even palindromes. Once we work through an example, it will helps us come up with a good solution. Step 1: Check base conditions, Step 2: Populate map with character occurences, Step 3: Find the number of remaining characters and return ```numRemaining <= k```
 
+<ins>LeetCode #1396: Design Underground Systems</ins> For design questions, the first thing you need to figure out is the type of data structure that you are going to use. One of the functions specifies an id, startStation, and time, the obvious choice would be a ```map<int, pair<string,int>>```. We also have another function that specifies the id, endStation, and time. This would mean we should use another map ```map<pair<string,string>, vector<double>>```. Once we have the data structure defined, it is trivial to fill in the functions. 
 
-https://leetcode.com/problems/construct-k-palindrome-strings/
+```
+map1 = map<int, pair<string,int>> = map<id, <startStation, startTime>>
+map2 = map<pair<string,string>, vector<double>> = map<<startStation, endStation>, vector<endTime-startTime>>
+
+UndergroundSystem() -> Initialize maps
+checkIn(int id, string stationName, int t) -> Fill in map1
+checkOut(int id, string stationName, int t) -> Fill in map2 using map1 info
+getAverageTime(string startStation, string endStation) -> Get number of instances from station1 to station2, sum up station1 to station2, avg = sum/size
+```
+
+https://leetcode.com/problems/construct-k-palindrome-strings/ <br/>
+https://leetcode.com/problems/design-underground-system/
 
