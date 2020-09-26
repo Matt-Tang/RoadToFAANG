@@ -238,3 +238,31 @@ For C++:  int result = INT_MIN;
 
 https://leetcode.com/problems/largest-number/
 
+# Day 8 - September 26th, 2020
+## Concepts learned: Amazon Interview Questions (14 out of 67) - Construct K Palindrome String
+
+<ins>LeetCode #1400: Construct K Palindrome Strings</ins> There are two types of palindrome strings that we need to investigate. There is an odd palindrome and there is an even palindrome. Both odd and even are "valid palindromes" but they differ based on the characters inside the string. In the below example, we see that in the even palindrome all characters are even numbered (a=4, b=2) and in the odd palindrome there is a set of character that is odd numbered (a=4, b=3).
+
+```
+Even palindrome: aa bb aa (6 total)
+Odd palindrome: aa bbb aa (7 total)
+** For all odd palindromes, there can only be 1 character that is odd
+```
+Here is an example that makes visualizing this problem much easier: 
+```
+L = 3
+M = 3
+N = 1
+O = 5
+and K = 3 so 3 substrings
+
+____ ____ ____
+{LL}, {MM}, {OOOO} // these even sets of characters can fit in any of the 3 substrings
+{L, M, N, O} // After we assign the even sets, we have 4 characters remaining. At most, each substring can only contain 1 odd character
+{O} // Assuming that we assign L, M, N we would have a character that doesn't fit. Therefore, return false
+```
+From the above example, it is obvious how we should construct our algorithm. The hardest part about this question is understanding the concepts of odd and even palindromes. Once we work through an example, it will helps us come up with a good solution. Step 1: Check base conditions, Step 2: Populate map with character occurences, Step 3: Find the number of remaining characters and return ```numRemaining <= k```
+
+
+https://leetcode.com/problems/construct-k-palindrome-strings/
+
