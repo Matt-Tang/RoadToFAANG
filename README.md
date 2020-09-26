@@ -232,9 +232,8 @@ It's a Friday night so I want to relax and not work too hard. So I'll do 1 LC qu
 <ins>LeetCode #53: Maximum Subarray</ins> The trivial answer would be O(n^2) where you loop through all possible subarrays and find the max. An optimized approach is to have a running counter. If the counter ever goes below 0, then you stop with that subarray and start a new one. For Max or Min questions like these you definitely need a loop and a variable that compares the max or min between your result variable and some type of running counter.
 
 ```
-For Java:
-For C++: 
-
+For Java: int result = Integer.MIN_VALUE;
+For C++:  int result = INT_MIN;
 ```
 
 https://leetcode.com/problems/largest-number/
