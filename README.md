@@ -219,3 +219,23 @@ When you use the &, you don't copy, you use original value through reference.
 https://leetcode.com/problems/number-of-ways-to-paint-n-3-grid/ <br/>
 https://leetcode.com/problems/number-of-ways-to-paint-n-3-grid/discuss/574943/Java-Detailed-Explanation-with-Graph-Demo-DP-Easy-Understand <br/>
 https://leetcode.com/problems/group-anagrams/
+
+# Break - September 21-24th, 2020
+
+Work started to pick up so I had less time to do LeetCode. Also I had to drive my sister to McMaster so I lost an entire evening. I also needed to finish a PD and EARTH 121 assignment so I have been quite tired. I started playing Among Us and have been sleeping later than normal so I will try to fix my sleep schedule this weekend. The weather has been really nice for the last couple of days (23-25 degrees) so I've been going out and trying to enjoy the good weather before it becomes dark and depressing. 
+
+# Day 7 - September 25th, 2020
+## Concepts learned: Amazon Interview Questions (13 out of 67) - Maximum Subarray
+
+It's a Friday night so I want to relax and not work too hard. So I'll do 1 LC question.<br/>
+
+<ins>LeetCode #53: Maximum Subarray</ins> The trivial answer would be O(n^2) where you loop through all possible subarrays and find the max. An optimized approach is to have a running counter. If the counter ever goes below 0, then you stop with that subarray and start a new one. For Max or Min questions like these you definitely need a loop and a variable that compares the max or min between your result variable and some type of running counter.
+
+```
+For Java:
+For C++: 
+
+```
+
+https://leetcode.com/problems/largest-number/
+
