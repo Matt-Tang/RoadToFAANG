@@ -280,3 +280,13 @@ getAverageTime(string startStation, string endStation) -> Get number of instance
 https://leetcode.com/problems/construct-k-palindrome-strings/ <br/>
 https://leetcode.com/problems/design-underground-system/
 
+# Day 9 - September 27th, 2020
+## Concepts learned: Amazon Interview Questions (17 out of 67) - Balance a Binary Search Tree
+
+Today I did a lot of gardening work so I'm drained. I'll be doing only 1 problem of LC.<br/>
+
+<ins>LeetCode #1382: Balance a Binary Search Tree</ins> A valid binary search tree is balanced if and only if the depth of the two subtrees of every node never differ by more than 1. Given any arbitrary tree, it would be very difficult and complex to rotate the original tree to fix every subtree to be balanced. This gives us a hint that our solution can't be O(1) and at least O(n). When we construct a tree from scratch, we would need all the elements of the tree (preferably in sorted order). 
+
+To do this, we can perform an inorder traversal on the tree and store the elements in a vector. An inorder traversal of a binary search tree will return the elements in sorted order from lowest to highest. To create a balanced tree, we would use this sorted vector and perform recursion. The root node would be the middle index, ```left child = 0 to mid-1``` and ```right child = mid + 1 to vector.size()-1 ```.
+
+https://leetcode.com/problems/balance-a-binary-search-tree/
