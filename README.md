@@ -300,3 +300,21 @@ If you are trying to use a vector size for a mathematical operation, in C++ you 
 ``` int minValue = min(k, (int)vector.size()); ```
 
 https://leetcode.com/problems/design-a-stack-with-increment-operation/
+
+# Day 11 - September 29th, 2020
+## Concepts learned: Amazon Interview Questions (20 out of 67) - Check If N and Its Double Exist
+
+<ins>LeetCode #1346: Check If N and Its Double Exist</ins> This question can be attempted in many different ways. Usually, if you are doing more than 1 pass of the array, the space complexity is at minimum O(n) as you need to store the elements in a set/map/vector to reference them later. For this question, using a set vs vector vs map matters. This is because the "find" operation of a set is more optimized when compared to a vector or map. <br/>
+
+The algorithm is: 1) Store the elements in a set using ```set<int> set(arr.begin(), arr.end());``` 2) Loop through the array and keep track if you run into a zero. If it's the first time you see a zero set a variable to true. If it's the second time you see a zero ```return true```. 3) In each iteration, look through the set and see if you can find ```2*arr[i]```.
+
+```
+If you want to use the find operation on a set, there are two options:
+1) set.count(x); // This is recommended
+2) set.find(x); // This may return the end iterator so you need to write more code
+-> The end iterator is just a placeholder for a "one past last" element, 
+-> It is used as an end condition for loops or to signal that an element does not exist; 
+-> You would need to add an extra condition which is: if(set.find(2*x)!=nums.end())
+```
+
+https://leetcode.com/problems/check-if-n-and-its-double-exist/
