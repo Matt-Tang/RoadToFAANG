@@ -290,3 +290,13 @@ Today I did a lot of gardening work so I'm drained. I'll be doing only 1 problem
 To do this, we can perform an inorder traversal on the tree and store the elements in a vector. An inorder traversal of a binary search tree will return the elements in sorted order from lowest to highest. To create a balanced tree, we would use this sorted vector and perform recursion. The root node would be the middle index, ```left child = 0 to mid-1``` and ```right child = mid + 1 to vector.size()-1 ```.
 
 https://leetcode.com/problems/balance-a-binary-search-tree/
+
+# Day 10 - September 28th, 2020
+## Concepts learned: Amazon Interview Questions (18 out of 67) - Design a Stack With Increment Operation
+
+<ins>LeetCode #1381: Design a Stack With Increment Operation</ins> Design questions are all about choosing the right data structure to support the functionality. Here we are dealing with implementing a stack that has push, pop, and increment operations. The easiest data structure to pick would be a vector as it has ```push_back = push``` and ```pop_back = pop```. To increment all the values, we can just loop through the vector. (In Java, I would use an ArrayList)
+
+If you are trying to use a vector size for a mathematical operation, in C++ you need casting: <br/>
+``` int minValue = min(k, (int)vector.size()); ```
+
+https://leetcode.com/problems/design-a-stack-with-increment-operation/
