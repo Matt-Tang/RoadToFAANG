@@ -318,3 +318,7 @@ If you want to use the find operation on a set, there are two options:
 ```
 
 https://leetcode.com/problems/check-if-n-and-its-double-exist/
+
+# Break - September 30th to October 2nd, 2020
+
+Work is starting to pick up so I have less time to do LeetCode after work. Since it's getting dark much faster, after work I've been going to Kelvin's house and playing basketball to get my daily activity for the day. On Thursday, we had a Among Us game night with a couple of my previous co workers which was really nice. It felt good reconnecting with them and just catching up.
