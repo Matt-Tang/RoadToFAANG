@@ -319,6 +319,26 @@ If you want to use the find operation on a set, there are two options:
 
 https://leetcode.com/problems/check-if-n-and-its-double-exist/
 
-# Break - September 30th to October 2nd, 2020
+# Break - September 30th to October 3rd, 2020
 
 Work is starting to pick up so I have less time to do LeetCode after work. Since it's getting dark much faster, after work I've been going to Kelvin's house and playing basketball to get my daily activity for the day. On Thursday, we had a Among Us game night with a couple of my previous co workers which was really nice. It felt good reconnecting with them and just catching up.
+
+# Day 12 - October 4th, 2020
+## Concepts learned: Amazon Interview Questions (21,22 out of 67) - Minimum Number of Steps to Make Two Strings Anagram, Minimum Number of Steps to Make Two Strings Anagram
+<ins>LeetCode #1347: Minimum Number of Steps to Make Two Strings Anagram</ins> To find differences between two strings, the easiest approach would be to keep a tally for the differences. A common data structure that is used to keep tally is a map/unordered map. For characters found in string 1, we increment the map value, and for characters found in string 2, we decrement the map value. After the talley is done, we sum up the entire map (using abs function) to find the total amount of differences between the 2 strings. The total amount of differences is then divided by 2 which gives the final answer.
+
+The reason we divide by 2 is because: <br/>
+``` ex: "bab" & "aab" - there are 2 differences, if we change the a to b in the second string we have an anagram. 1 change is required (2 differences/1 = 1 step)```
+
+<ins>LeetCode #1339: Maximum Product of Splitted Binary Tree</ins> If you are looking at any node in the tree, a split would create two subtrees. One subtree would be everything above the node (not including the node) and the other subtree would be everything below the node and the node itself (node + left + right). Now that we know this, one way to get the sum below a node is to perform a recursive DFS. When we are performing every recursion, we want to get store the sum below the node (node + left + right) because our goal is to see at which part of the tree would give us the max product when the tree is split. Therefore, we need to store these sums at every node in a data structure (ex: a list). Once we have a list of all sums, all we need to do is iterate through the list of sums and perform a max check. 
+
+This method works because:
+``` 
+Total = DFS from the root and sum up all the nodes to the leaves
+Tree1 is everything above the node (not including the node itself) = total - (node.val + left + right) 
+Tree2 is the node itself + left + right = node.val + left + right
+Max product = tree1 * tree2
+```
+
+https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagram/ <br/>
+https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/
