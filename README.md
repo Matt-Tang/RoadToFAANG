@@ -342,3 +342,31 @@ Max product = tree1 * tree2
 
 https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagram/ <br/>
 https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/
+
+# Break - October 5th, 2020
+
+Today I had a pretty bad day at work. I had a lot of slack issues, internet problems, and overall just had things breaking left and right. I wasn't in the mood for LeetCode today so I just went out with Kelvin at night. We bought a hot drink and just talked for a long time. We also had a dance practice at night. 
+
+# Day 13 - October 6th, 2020
+## Concepts learned: Amazon Interview Questions (23 out of 67) - Reduce Array Size to The Half
+
+<ins>LeetCode #1338: Reduce Array Size to The Half</ins> The idea behind this question is to try and talley up the number of instances of each number in the array. We could use a map but a vector would also work.
+
+```
+vector<int> v;
+sort(arr.begin(), arr.end());
+int count = 1;
+for(int i = 1; i < arr.size(); i++){
+    if(arr[i] == arr[i-1])
+        c++;
+    else{
+        v.push_back(c);
+        c = 1;
+    }
+}
+v.push_back(c);
+sort(v.begin(), v.end());
+```
+Once we have the vector of number of instances sorted, all we need to do is work backwards and keep subtracing the number of instances until it reaches n/2. For every iteration that we subtract v[i] we need to increment the result by 1.
+
+https://leetcode.com/problems/reduce-array-size-to-the-half/
