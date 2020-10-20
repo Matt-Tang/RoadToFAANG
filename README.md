@@ -24,7 +24,6 @@ Finished up my exams for the Spring 2020 term and also took a few days off to re
 
 https://www.programcreek.com/2014/07/leetcode-meeting-rooms-java/ <br/>
 https://www.programcreek.com/2014/05/leetcode-meeting-rooms-ii-java/<br/>
-http://tiancao.me/Leetcode-Unlocked/LeetCode%20Locked/c1.6.html
 
 # Day 1 - September 9th, 2020
 ## Concepts learned: Basic template for Overlapping Interval Problem and C++ Auto Keyword
@@ -370,3 +369,12 @@ sort(v.begin(), v.end());
 Once we have the vector of number of instances sorted, all we need to do is work backwards and keep subtracing the number of instances until it reaches n/2. For every iteration that we subtract v[i] we need to increment the result by 1.
 
 https://leetcode.com/problems/reduce-array-size-to-the-half/
+
+
+# Break - October 7th to October 18th, 2020
+
+Honestly after my birthday on the 9th, I've been going out and having fun with zero interest in LeetCode. I also started to watch a lot of Netflix shows (Stranger Things 3, Kingdom 1&2, The Haunting of Bly Manor) so that has taken up a lot of my free time. Work keeps getting busier and busier so I feel more and more drained after work.
+
+# Day 14 - October 19th, 2020
+
+To ease myself back into LeetCode after such a long break, I started to do some reviewing. I reviewed Merge Intervals, Insert Intervals, and Meeting Rooms 1.
